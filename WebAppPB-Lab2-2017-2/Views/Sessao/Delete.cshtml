@@ -1,0 +1,88 @@
+﻿@model WebAppPB_Lab2_2017_2.Models.Sessao
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Sessao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Filme.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Filme.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingresso.IngressoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ingresso.IngressoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sala.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sala.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHoraInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHoraInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHoraFim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHoraFim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorInteira)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorInteira)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorMeia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorMeia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Encerrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Encerrada)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

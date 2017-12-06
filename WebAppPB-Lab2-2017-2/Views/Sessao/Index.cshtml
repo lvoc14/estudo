@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebAppPB_Lab2_2017_2.Models.Sessao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Filme.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingresso.IngressoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sala.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataHoraInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataHoraFim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorInteira)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorMeia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Encerrada)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Filme.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ingresso.IngressoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sala.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataHoraInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataHoraFim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorInteira)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorMeia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Encerrada)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SessaoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SessaoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SessaoId })
+        </td>
+    </tr>
+}
+
+</table>

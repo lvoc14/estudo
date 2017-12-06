@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebAppPB_Lab2_2017_2.Models.Sala>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SalaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SalaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SalaId })
+        </td>
+    </tr>
+}
+
+</table>
